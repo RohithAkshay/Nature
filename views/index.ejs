@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="eg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <title>Creation</title>
+</head>
+<body>
+
+<%- include("partials/header.ejs") %>
+<main class="container">
+
+<h1>In every walk with <span class="nature">Nature</span> <br/>one receives far more than he seeks</h1>
+<div class="main">
+    <div class="left">
+        <div class="slideshow-container">
+            <img class="mySlides" src="images/Nature/1.png" alt="nature pic">
+            <img class="mySlides" src="images/Nature/2.png" alt="nature pic">
+            <img class="mySlides" src="images/Nature/3.png" alt="nature pic">
+            <img class="mySlides" src="images/Nature/4.png" alt="nature pic">
+            <img class="mySlides" src="images/Nature/5.png" alt="nature pic">
+            <img class="mySlides" src="images/Nature/6.jpg" alt="nature pic">
+        </div>
+        <div class="content">
+            <h2 class="card-title">Nature</h2>
+        <p class="card-text">Our forests, rivers, oceans and soils provide us with the food we eat, the air we breathe,
+            the water we irrigate our crops with.We also rely on them for numerous other goods and services we depend 
+            on for our health, happiness and prosperity.
+        </p>
+        </div>
+         
+    </div>
+    
+    <div class="right">
+        <div class="slideshow-container">
+            <img class="mySlides2" src="images/Peace/1.png" alt="peace pic">
+            <img class="mySlides2" src="images/Peace/2.png" alt="peace pic">
+            <img class="mySlides2" src="images/Peace/3.png" alt="peace pic">
+            <img class="mySlides2" src="images/Peace/4.png" alt="peace pic">
+            <img class="mySlides2" src="images/Peace/5.png" alt="peace pic">
+            <img class="mySlides2" src="images/Peace/6.png" alt="peace pic">
+        </div>
+        <div class="content">
+            <h2 class="card-title">Peace</h2>
+        <p class="card-text">Making peace with nature means grappling with humanity's impact on climate, biodiversity 
+            and beyond.
+        </p>
+        </div>
+        
+    </div>
+</div>
+
+
+<script>
+    let slideIndex = 0;
+    let slideIndex2 = 0;
+    showSlides();
+    showSlides2();
+    
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    function showSlides2() {
+        let j;
+        let slides2 = document.getElementsByClassName("mySlides2");
+        for (j = 0; j < slides2.length; j++) {
+            slides2[j].style.display = "none";
+        }
+        slideIndex2++
+        if (slideIndex2 > slides2.length) {slideIndex2 = 1}
+        slides2[slideIndex2-1].style.display = "block";
+        setTimeout(showSlides2, 2000); // Change image every 2 seconds
+    }
+</script>
+
+<%- include("partials/footer.ejs") %>
+</main>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
